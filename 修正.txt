@@ -1,0 +1,63 @@
+//画面遷移
+<script type="text/javascript">
+<!-- 注文ボタン押下時のチェック  -->
+ function check(){
+    var check =  false;
+ 	<?php foreach ($menus as $menu): ?>
+ 	<!-- 注文総数0なら、確認画面に遷移しない  -->
+ 	if( Number(<?php echo $menu->getName() ?>.value ) > 0){
+ 	    check =  true;
+ 	}
+ 	<?php endforeach ?>
+ 	if(!check) alert("注文個数が入力されていません");
+ 	return check;
+ }
+</script>
+
+<form method="post" action="confirm.php" onsubmit="return check()">// javascript の呼ぶだしはreturn必
+      <!-- メニュー名押下でレビュー画面に遷移 =で変数渡し  -->
+      <a href="show.php?name=<?php echo $menu->getName() ?>"> //
+	      	<!-- メニュー名表示  -->
+	        <?php echo $menu->getName() ?> これでconfirm.phpで受け取れる
+      </a>
+  <input type="submit" value="注文する">
+</form>
+
+
+---[show.php]--------------------------------------------------------------
+<?php
+$menuName = $_GET['name'];  //GETはURLでパラメータ渡し
+---[confirm.php]--------------------------------------------------------------
+<?php
+<body
+どこでも受け取れる
+
+$_POST[$menu->getName()];
+
+///////////////////////////////////////////////////////////////////////////////////////
+<?php phpの関数() ?>はhtmlタグ以外に書いてもコメントアウトだろうが、onclickの中だろうが
+javascriptの関数だろうが
+強制実行されてしまう
+php関数を呼び出したい場合はシンプルに関数名だけ書く→出来なかった
+
+
+
+javascript内でphpを呼ぶ場合は 
+①json
+②src="～.php?パラメータ名=値" (！自身フォームを呼び出すと再リロードになってしまう)
+呼び出す際は外部php（処理だけかいた(中でパラメータによって呼出す関数を分けるなど必要アリ)
+
+?
+<script type="text/javascript">
+if( Number(<?php echo $menu->getName() ?>.value ) > 0){ //数値変換して1以上ならtrue
+}
+</script>
+④
+if(isset($_POST["jikkou"])){
+//実行スクリプト
+}else{
+//通常の画面
+<form action="自身のファイル名" method="post" >
+<input type="submit" value="実行" name="jikkou">
+</form>
+}

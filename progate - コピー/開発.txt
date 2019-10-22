@@ -1,0 +1,83 @@
+php開発
+・メニュー追加(デザート、酒)
+フード、ドリンク
+・メニュークラス新規追加　継承
+　１オリジナルメソッド作成
+
+カロリー追加
+商品説明
+
+メニューデータベース化
+menu-itemクラス切出し
+
+・新規機能追加
+
+注文するボタン押下時、なにも入力されていなければエラーメッセージ表示
+検索
+ログイン
+会員情報の登録、削除、更新
+商品の購入、予約、
+お気に入り登録
+API連携　インスタ　ツイッター
+オンライン上での決済処理
+
+show.phpコメント
+
+商品画像不揃い-原因:アルコール,ホット/アイスの表示の違いで縦の長さが変わる
+サーバー上げる
+db化
+----------------------------------
+■【星レビュー機能追加】■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+総合評価 4.5 (18件)
+☆5■■■■■ 5件
+☆4■■■■□ 4件
+☆3■■□□□ 2件
+☆2□□□□□
+☆1■□□□□ 1件
+
+・参考
+楽天市場
+https://review.rakuten.co.jp/item/1/213310_19693270/1.1/
+================================================================================
+.php側からjavascriptを呼び出す
+https://so-zou.jp/web-app/tech/programming/php/sample/javascript-cooperation.htm#no4
+
+スクリプトファイルを読み込む際jsではなくphpファイルをしていする
+http://ysklog.net/javascript/1870.html
+JavascriptからPHPスクリプトを呼び出す方法
+https://renoji.com/IT.php?Contents=Program_Javascript/Ref_CallPHP.html
+
+新人プログラマですがjQueryのajaxがわからなすぎて勉強したまとめ(非同期通信)
+https://qiita.com/okumurakengo/items/53020dd97382d49621ce
+
+
+
+◆Chart.js 積上げ棒グラフ====================================================================
+・水平棒グラフ
+http://www.kogures.com/hitoshi/javascript/chartjs/bar.html
+
+【リアルタイムチャートをChart.js で作ってみた。】→DBでChart.js
+https://qiita.com/ryomaDsakamoto/items/e61e1501683eeddf4338
+
+Chart.js を使って作る縦と横向きの棒グラフのサンプル ← 参考になる
+https://memorva.jp/memo/html/chartjs_bar_chart.php
+
+CSVデータをchart.jsでグラフ化する！
+https://qiita.com/tabetomo/items/f1fa423bf826a1d2efb8
+◆google 積上げ棒グラフ====================================================================
+メリット   : htmlに画像のurlをパラメーター化するだけなので、シンプルで簡単
+デメリット :軸タイトルを思うように付けれなかったり細かいカスタムが出来ない
+<p>
+<img src="http://chart.apis.google.com/chart?chs=300x200&amp;chd=t:20,60,50,70,30
+&amp;chdl=星5|星4|星3|星2|星1&amp;cht=bhs" alt="サンプル画像" width="300" height="100">
+</p>
+使い方
+https://www.javadrive.jp/google-chart-tools/type/index3.html
+パラメータ解説
+https://kurage.ready.jp/g-chart/imgchart.html
+
+====================================================================
+■共通レイアウトの切出し
+ページの中に他のHTMLを読み込んで表示する
+https://gray-code.com/html_css/view-another-html-on-current-html/

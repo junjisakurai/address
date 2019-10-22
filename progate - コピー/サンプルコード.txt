@@ -1,0 +1,65 @@
+              <?php
+              if(isset($_POST['submit'])){
+              echo '<script type="text/javascript">alert("押された");</script>';
+                  foreach ($menus as $menu){
+                    if($_POST[$menu->getName()] > 0){
+                    echo '<script type="text/javascript">alert("注文個数が入力されていません");</script>';
+                    }
+                  }
+              }
+
+              ?>
+              
+<script type="text/javascript">
+ function check(){
+    var check =  false;
+ 	alert("押された");
+ 	<?php foreach ($menus as $menu): ?>
+ 		<?php if($_POST[$menu->getName()] > 0): ?>
+ 			check =true;
+ 			break;
+ 		<?php endif ?>
+ 	<?php endforeach ?>
+ 	if(!check) alert("注文個数が入力されていません");
+ 	return check;
+ }
+</script>
+
+
+<script type="text/javascript">
+<!-- 注文ボタン押下時のチェック  -->
+ function check(){
+    var check =  false;
+ 	<?php foreach ($menus as $menu): ?>
+ 	alert(<?php echo $menu->getName() ?>.value);
+ 	if(Number(<?php echo $menu->getName() ?>.value ) > 0) {
+ 	  check =  true;
+ 	  break;
+ 	}
+ 	<?php endforeach ?>
+ 	if(!check) alert("注文個数が入力されていません");
+ 	return check;
+ }
+</script>
+  
+  通った
+ <script type="text/javascript"> alert(    <?php echo $menu->getName() ?>.value    ); </script>
+ 
+ <script type="text/javascript">
+<!-- 注文ボタン押下時のチェック  -->
+ function check(){
+    var check =  false;
+ 	<?php foreach ($menus as $menu): ?>
+ 	if( typeof( Number(<?php echo $menu->getName() ?>.value ))== "number" &&
+ 	    Number(<?php echo $menu->getName() ?>.value ) > 0){
+ 	 check =  true;
+ 	  	alert(<?php echo $menu->getName() ?>.value);
+ 	}else{
+ 	alert("numberじゃない");
+ 	}
+ 	<?php endforeach ?>
+ 	if(!check) alert("注文個数が入力されていません");
+ 	return check;
+ }
+</script>
+ 
