@@ -1,0 +1,96 @@
+DELETE FROM sys_AAA
+WHERE sys_AAA.cnt_cd = ac_cnt_cd
+//--------------
+INSERT INTO sys_AAA(
+     aa,
+     bb
+)
+SELECT aa,
+       bb
+FROM sys_tmp_AAA
+WHERE sys_tmp_AAA.cnt_cd = ac_cnt_cd
+//---------------
+DELETE FROM sys_tmp_AAA
+WHERE sys_tmp_AAA.cnt_cd = ac_cnt_cd
+//-----------------------------------
+
+1.
+sys_cnt_info
+sys_tmp_cnt_info
+2.
+sys_m_cnt ëΩ
+sys_tmp_m_cnt
+
+3.
+sys_event_term
+sys_tmp_event_term
+
+4.
+sys_event_appoint ëΩ
+sys_tmp_event_appoint
+
+âÊëútmpÅ®cntà⁄ìÆèàóù cntÇ©ÇÁèÍèäèÓïÒéÊìæ
+//------------------------------------------------------------
+DELETEÇµÇƒ0åèÇæÇ¡ÇΩÇÁìoò^ÇµÇ»Ç¢
+1.
+UPDATE sys_cnt_info(
+     aa,
+     bb
+)
+WHERE sys_cnt_info.cnt_cd = ac_cnt_cd
+SELECT aa,
+       bb
+FROM sys_tmp_cnt_info
+WHERE sys_tmp_cnt_info.cnt_cd = ac_cnt_cd
+//---------------
+DELETE FROM sys_tmp_cnt_info
+WHERE sys_tmp_cnt_info.cnt_cd = ac_cnt_cd
+
+2.
+DELETE FROM sys_m_cnt
+WHERE sys_m_cnt.cnt_cd = ac_cnt_cd
+//--------------
+INSERT INTO sys_m_cnt(
+     aa,
+     bb
+)
+SELECT aa,
+       bb
+FROM sys_tmp_m_cnt
+WHERE sys_tmp_m_cnt.cnt_cd = ac_cnt_cd
+//---------------
+DELETE FROM sys_tmp_m_cnt
+WHERE sys_tmp_m_cnt.cnt_cd = ac_cnt_cd
+
+3.
+DELETE FROM sys_event_term
+WHERE sys_event_term.cnt_cd = ac_cnt_cd
+//--------------
+INSERT INTO sys_event_term(
+     aa,
+     bb
+)
+SELECT aa,
+       bb
+FROM sys_tmp_event_term
+WHERE sys_tmp_event_term.cnt_cd = ac_cnt_cd
+//---------------
+DELETE FROM sys_tmp_event_term
+WHERE sys_tmp_event_term.cnt_cd = ac_cnt_cd
+4.
+//--------------
+DELETE FROM sys_event_appoint
+WHERE sys_event_appoint.cnt_cd = ac_cnt_cd
+
+//--------------
+INSERT INTO sys_event_appoint(
+     aa,
+     bb
+)
+SELECT aa,
+       bb
+FROM sys_tmp_event_appoint
+WHERE sys_tmp_event_appoint.cnt_cd = ac_cnt_cd
+//---------------
+DELETE FROM sys_tmp_event_appoint
+WHERE sys_tmp_event_appoint.cnt_cd = ac_cnt_cd
